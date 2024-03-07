@@ -5,7 +5,8 @@ export default function ExerciseListItem({ item }) {
     <View style={styles.exerciseContainer}>
       <Text style={styles.exerciseName}>{item.name}</Text>
       <Text style={styles.exerciseSubtitle}>
-        {item.muscle} | {item.equipment}
+        <Text style={styles.subValue}>{item.muscle}</Text> |{' '}
+        <Text style={styles.subValue}>{item.equipment}</Text>
       </Text>
     </View>
   );
@@ -17,6 +18,15 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     gap: 5,
+    marginHorizontal: 2,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+    elevation: 2,
   },
 
   exerciseName: {
@@ -25,5 +35,9 @@ const styles = StyleSheet.create({
   },
   exerciseSubtitle: {
     color: 'dimgrey',
+  },
+
+  subValue: {
+    textTransform: 'capitalize',
   },
 });
